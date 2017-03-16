@@ -1,0 +1,13 @@
+Package: fars
+Version: 0.1
+Date: 2017-03-13
+Depends:
+    R (>= 3.1)
+Imports:
+    dplyr
+Title: FARS Data Functions
+Authors@R: person("First", "Last", email="test@domain.com", role=c("aut","cre")) 
+Description: A function for reading FARS data.
+License: GPL (>= 2)
+URL: 
+RoxygenNote: 5.0.1
