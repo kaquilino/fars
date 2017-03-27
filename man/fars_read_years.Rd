@@ -19,7 +19,7 @@ Reads a series of Fatality Analysis Reporting System (FARS) files and returns a 
 If the file for a specified year, or permission to it, does not exist, an error is produced.
 }
 \examples{
-fars_read_years(2003:2015)
+\dontrun{fars_read_years(2013:2015)}
 
 }
 \references{

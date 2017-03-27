@@ -12,7 +12,7 @@ fars_map_state(state.num, year)
 \item{year}{Two digit year, coerced to integer.}
 }
 \value{
-This function returns a list of \code{x}, \code{y}, \code{range} and \code{names} components which can be used for successive calls to map and functions. A plot is made of the fatal crashes on a map of the state.
+This function produces a plot of the fatal crashes on a map of the state.
 }
 \description{
 Reads a Fatality Analysis Reporting System (FARS) file and plots a map of fatal crashes.
@@ -25,11 +25,11 @@ If there are no fatal crashes for the state and year, a message is provided.
 LONGITUD values > 900 are set to NA, LATITUDE values > 90 are set to NA
 }
 \examples{
-fars_map_state('01','2014')
+\dontrun{fars_map_state('01','2014')}
 
 }
 \references{
-FARS data: \url{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars}
-State reference numbers: \url{https://crashstats.nhtsa.dot.gov/Api/Public/Publication/812296}
+FARS data: \url{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars};
+State reference numbers: \url{https://crashstats.nhtsa.dot.gov} see publication 812296
 }
 

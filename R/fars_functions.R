@@ -6,8 +6,7 @@
 #' 
 #' @return This function returns a \code{dplyr::tbl_df} of the file.
 #' 
-#' @importFrom readr read_csv
-#' @importFrom dplyr tbl_df
+#' @import dplyr
 #' 
 #' @note If the file or permission to it does not exist, an error is produced.
 #' 
@@ -56,12 +55,12 @@ make_filename <- function(year) {
 #' 
 #' @return This function returns a \code{dplyr::tbl_df} with month and year columns.
 #' 
-#' @importFrom dplyr mutate select
+#' @import dplyr
 #' 
 #' @note If the file for a specified year, or permission to it, does not exist, an error is produced.
 #' 
 #' @examples
-#' fars_read_years(2003:2015)
+#' \dontrun{fars_read_years(2013:2015)}
 #' 
 #' @references \url{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars}
 #' 
@@ -88,13 +87,13 @@ fars_read_years <- function(years) {
 #' 
 #' @return This function returns a data frame of the fatality crash frequency by month (row) and year (column).
 #' 
-#' @importFrom dplyr group_by summarize bind_rows
+#' @import dplyr 
 #' @importFrom tidyr spread
 #' 
 #' @note If the file for a specified year, or permission to it, does not exist, an error is produced.
 #' 
 #' @examples
-#' fars_summarize_years(2003:2015)
+#' \dontrun{fars_summarize_years(2013:2015)}
 #' 
 #' @references \url{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars}
 #' 
@@ -114,10 +113,10 @@ fars_summarize_years <- function(years) {
 #' @param state.num Two digit FARS state reference number.   
 #' @param year Two digit year, coerced to integer. 
 #'   
-#' @return This function returns a list of \code{x}, \code{y}, \code{range} and \code{names} components which can be used for successive calls to map and functions. A plot is made of the fatal crashes on a map of the state.
+#' @return This function produces a plot of the fatal crashes on a map of the state.
 #' 
-#' @importFrom dplyr filter
-#' @importFrom maps map
+#' @import dplyr
+#' @import maps 
 #' @importFrom graphics points
 #' 
 #' @note If the \code{state.num} provided is not in the FARS file, an error is produced. 
@@ -125,11 +124,11 @@ fars_summarize_years <- function(years) {
 #' @note LONGITUD values > 900 are set to NA, LATITUDE values > 90 are set to NA
 #' 
 #' @examples
-#' fars_map_state('01','2014')
+#' \dontrun{fars_map_state('01','2014')}
 #' 
 #' @references 
 #' FARS data: \url{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars};
-#' State reference numbers: \url{https://crashstats.nhtsa.dot.gov/Api/Public/Publication/812296}
+#' State reference numbers: \url{https://crashstats.nhtsa.dot.gov} see publication 812296
 #' 
 #' @export
 fars_map_state <- function(state.num, year) {
