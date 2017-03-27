@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kaquilino/fars.svg?branch=master)](https://travis-ci.org/kaquilino/fars)
+
 # fars
 
 The `fars` package provides various functions to read and summarize data from the Fatality Analysis Reporting System (FARS) at https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars. 
