@@ -19,7 +19,7 @@ Reads a Fatality Analysis Reporting System (FARS) file in csv format and creates
 If the file or permission to it does not exist, an error is produced.
 }
 \examples{
-test_data <- system.file("extdata", "accident_2013.csv.bz2", package = "fars")
+test_data <- system.file("extdata", "accident_2014.csv.bz2", package = "fars")
 fars_read(filename=test_data)
 
 }

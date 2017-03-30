@@ -11,7 +11,7 @@
 #' @note If the file or permission to it does not exist, an error is produced.
 #' 
 #' @examples
-#' test_data <- system.file("extdata", "accident_2013.csv.bz2", package = "fars")
+#' test_data <- system.file("extdata", "accident_2014.csv.bz2", package = "fars")
 #' fars_read(filename=test_data)
 #' 
 #' @references \url{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars}
@@ -69,6 +69,7 @@ fars_read_years <- function(years) {
         lapply(years, function(year) {
                 file <- make_filename(year)
                 tryCatch({
+                        MONTH=NULL
                         dat <- fars_read(file)
                         dplyr::mutate(dat, year = year) %>% 
                                 dplyr::select(MONTH, year)
@@ -100,6 +101,8 @@ fars_read_years <- function(years) {
 #' @export
 fars_summarize_years <- function(years) {
         dat_list <- fars_read_years(years)
+        MONTH=NULL
+        year=NULL
         dplyr::bind_rows(dat_list) %>% 
                 dplyr::group_by(year, MONTH) %>% 
                 dplyr::summarize(n = n()) %>%
@@ -135,7 +138,7 @@ fars_map_state <- function(state.num, year) {
         filename <- make_filename(year)
         data <- fars_read(filename)
         state.num <- as.integer(state.num)
-
+        STATE=NULL # to avoid R CMD Check note
         if(!(state.num %in% unique(data$STATE)))
                 stop("invalid STATE number: ", state.num)
         data.sub <- dplyr::filter(data, STATE == state.num)
