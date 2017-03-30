@@ -10,7 +10,7 @@ Imports:
     graphics,
     readr
 Title: FARS Data Functions
-Authors@R: person("First", "Last", email="test@domain.com", role=c("aut","cre")) 
+Authors@R: person("Kim", "Aquilino", email="test@domain.com", role=c("aut","cre")) 
 Description: A function for reading FARS data.
 License: GPL (>= 2)
 URL: 
