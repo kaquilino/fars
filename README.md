@@ -18,5 +18,5 @@ devtools::install_github("fars/kaquilino")
 This is a basic example which shows you how to read a FARS data file:
 
 ```R
-fars_read(system.file("extdata","accident_2013.csv.bz2",package="fars"))
+fars_read(system.file("extdata","accident_2014.csv.bz2",package="fars"))
 ```
